@@ -1,1 +1,7 @@
-<%= @player1.name %> attacked <%= @player2.name %>!
+<%= @player1.name %> attacked <%= @player2.name %>! <br>
+Player 1 HP: <%= @player1.hp %> <br>
+Player 2 HP: <%= @player2.hp %>
+
+<form action='/play'>
+  <input type='submit' value='go next round!'>
+</form>

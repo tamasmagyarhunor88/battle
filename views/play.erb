@@ -1,5 +1,5 @@
 <header> <%= @player1.name %> vs. <%= @player2.name %> </header>
-<div class='player1-hp' style="float: left;">100</div> <div class='player2-hp' style="float: left;">100</div>
+<div class='player1-hp' style="float: left;"><%= @player1.hp%></div> <div class='player2-hp' style="float: left;"><%= @player2.hp%></div>
 <form action='/attack'>
   <input type='submit' value='ATTACK <%= @player2.name %>!'>
 </form>

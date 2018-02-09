@@ -24,9 +24,9 @@ describe Player do
     expect(hunor.next_to_attack).to be false
   end
 
-  it "switches next_to_attack to true when player receives damage" do
-    hunor.receive_damage
-    expect(hunor.next_to_attack).to be true
-  end
+  # it "switches next_to_attack to true when player receives damage" do
+  #   hunor.receive_damage
+  #   expect(hunor.next_to_attack).to be true
+  # end
 
 end

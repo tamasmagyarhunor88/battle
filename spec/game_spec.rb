@@ -16,22 +16,28 @@ describe Game do
   it "attacks second player" do
     allow(hunor).to receive(:switch_next_to_attack)
     allow(hannah).to receive(:switch_next_to_attack)
+    allow(hannah).to receive(:next_to_attack).and_return true
+    allow(hunor).to receive(:next_to_attack).and_return false
     expect(hunor).to receive(:receive_damage)
-    game.attack(hunor)
+    game.attack
   end
 
   it "player 1 switches next_to_attack status after they attack" do
     allow(hunor).to receive(:receive_damage)
     allow(hunor).to receive(:switch_next_to_attack)
+    allow(hannah).to receive(:next_to_attack).and_return true
+    allow(hunor).to receive(:next_to_attack).and_return false
     expect(hannah).to receive(:switch_next_to_attack)
-    game.attack(hunor)
+    game.attack
   end
 
   it "player 2 switches next_to_attack status after they attack" do
     allow(hannah).to receive(:receive_damage)
     allow(hannah).to receive(:switch_next_to_attack)
+    allow(hannah).to receive(:next_to_attack).and_return false
+    allow(hunor).to receive(:next_to_attack).and_return true
     expect(hunor).to receive(:switch_next_to_attack)
-    game.attack(hannah)
+    game.attack
   end
 
 end

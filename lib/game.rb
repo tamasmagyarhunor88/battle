@@ -12,9 +12,15 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.receive_damage
-    player == player1 ? player2.switch_next_to_attack : player1.switch_next_to_attack
+  def attack
+    @players.each do |p|
+      if p.next_to_attack == false
+        p.receive_damage
+        p.switch_next_to_attack
+      elsif p.next_to_attack == true
+        p.switch_next_to_attack
+      end
+    end
   end
 
 end

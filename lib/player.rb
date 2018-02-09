@@ -11,7 +11,6 @@ class Player
 
   def receive_damage
     @hp -= 10
-    switch_next_to_attack
   end
 
   def switch_next_to_attack

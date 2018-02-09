@@ -14,5 +14,7 @@ class Game
 
   def attack(player)
     player.receive_damage
+    player == player1 ? player2.switch_next_to_attack : player1.switch_next_to_attack
   end
+
 end
